@@ -52,8 +52,9 @@ public class TextParser {
             final Pattern [] patterns = getPatternArray();
 
             for(File file : contents) { // looping through files in folder
-                System.out.println("**********File name is:"+file.getName()+"*************");
                 if(file.getName().matches(PATTERN_FILE)) {
+                    System.out.println();
+                    System.out.println(file.getName().replaceFirst(".txt", "")+":");
                     fr = new FileReader(file.getAbsolutePath());
                     br = new BufferedReader(fr);
                     String sCurrentLine;
