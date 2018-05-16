@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,7 +16,7 @@ import java.util.regex.Pattern;
  */
 public class TextParser {
 
-    private static final String FOLDER = "/Users/yannipeng/Downloads/Coding-Challenge";
+    //private static final String FOLDER = "/Users/yannipeng/Downloads/Coding-Challenge";
     private static final String PATTERN_FILE = "shoe[0-9]{0,1000}.txt";
     private static final String PATTERN_HEEL_STYLE = "-\\s.+(heel)[\\s\\.]*";
     private static final String PATTERN_HEEL_HEIGHT = "(-\\s\\D+)([+ -]?[0-9]{1,2}([.]+[0-9]{0,2})?)\".+";
@@ -39,7 +40,9 @@ public class TextParser {
 
     public static void main(String[] args) {
 
-        File directory = new File(FOLDER);
+        System.out.println("Enter The Absolute Path of Coding-Challenge Folder");
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        File directory = new File(reader.nextLine()); // I put my files /Users/yannipeng/Downloads/Coding-Challenge
         File[] contents = directory.listFiles();
 
         BufferedReader br = null;
